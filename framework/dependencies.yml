@@ -23,7 +23,7 @@ require:    &allDependencies
     - commons-codec 1.10
     - org.apache.commons -> commons-email 1.5
     - commons-fileupload 1.4
-    - commons-io 2.5
+    - commons-io 2.9.0
     - com.google.code.maven-play-plugin.org.apache.commons -> commons-javaflow 1590792
     - commons-lang 2.6
     - commons-logging 1.2
