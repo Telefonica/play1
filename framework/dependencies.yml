@@ -39,7 +39,7 @@ require:    &allDependencies
     - junit 4.13.2
     - jregex 1.2_01
     - log4j 1.2.17
-    - net.sf.ehcache -> ehcache 2.10.9.2
+    - net.sf.ehcache -> ehcache 2.10.9.2-romano1
     - net.sf.ezmorph -> ezmorph 1.0.6
     - net.sf.jsr107cache -> jsr107cache 1.1
     - net.sf.oval -> oval 1.86
