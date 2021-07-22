@@ -124,7 +124,7 @@
     open('/optionalSlash')
     assertTextPresent('OK')
     open('/optionalSlash//')
-    assertTextPresent('Not found')
+    assertTextPresent('OK')
     
     // Catch all route
     open('/application/optional')
