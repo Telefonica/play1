@@ -81,19 +81,19 @@ public class FirePhoque {
         // Let's tweak WebClient
 
         String headlessBrowser = System.getProperty("headlessBrowser", "FIREFOX_38");
+
         BrowserVersion browserVersion;
+
         if ("CHROME".equals(headlessBrowser)) {
             browserVersion = BrowserVersion.CHROME;
-        } else if ("FIREFOX_38".equals(headlessBrowser)) {
-            browserVersion = BrowserVersion.FIREFOX_38;  
-        }    else if ("INTERNET_EXPLORER".equals(headlessBrowser)) {
-            browserVersion = BrowserVersion.INTERNET_EXPLORER;
-        }    else if ("INTERNET_EXPLORER_11".equals(headlessBrowser)) {
-            browserVersion = BrowserVersion.INTERNET_EXPLORER_11;
         } else if ("EDGE".equals(headlessBrowser)) {
             browserVersion = BrowserVersion.EDGE;
+        } else if ("FIREFOX_38".equals(headlessBrowser)) {
+            browserVersion = BrowserVersion.FIREFOX;  
+        } else if ("INTERNET_EXPLORER".equals(headlessBrowser)) {
+            browserVersion = BrowserVersion.INTERNET_EXPLORER;
         } else {
-            browserVersion = BrowserVersion.FIREFOX_45;
+            browserVersion = BrowserVersion.FIREFOX;
         }
 
         WebClient firephoque = new WebClient(browserVersion);
@@ -149,7 +149,7 @@ public class FirePhoque {
             }
         });
         firephoque.setPromptHandler(new PromptHandler() {
-            public String handlePrompt(Page page, String message) {
+            public String handlePrompt(Page page, String message, String defaultValue) {
                 try {
                     ScriptableObject window = page.getEnclosingWindow().getScriptableObject();
                     String script = "parent.selenium.browserbot.recordedPrompts.push('" + message.replace("'", "\\'")+ "');" +
